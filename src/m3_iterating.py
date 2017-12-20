@@ -129,7 +129,7 @@ def count_negatives(seq):
 def run_test_count_short_ones():
     """ Tests the   count_short_ones   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE 4
     #   It TESTS the  count_short_ones  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -204,6 +204,22 @@ def run_test_count_short_ones():
 
     # TO DO 4 (continued):  Add your 2 ADDITIONAL test(s) here:
 
+    # Test 8:
+    expected = 2
+    seq = ['my', 'cat', 'is', 'named', 'chocolate']
+    actual = count_short_ones(seq)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 9:
+    expected = 3
+    seq = ['He', 'is', 'a', 'cute', 'cat']
+    actual = count_short_ones(seq)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def count_short_ones(seq_of_lists):
     """
@@ -226,9 +242,16 @@ def count_short_ones(seq_of_lists):
       :type seq_of_lists: (list | tuple) of (list | tuple | str)
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE 5
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    count = 0
+    length = len(seq_of_lists)
+
+    for k in range(length):
+        if len(seq_of_lists[k]) < 3:
+            count = count + 1
+    return count
 
 
 def run_test_draw_circles():
@@ -307,9 +330,14 @@ def draw_circles(window, points, radius, color):
       :type color: str
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE 6
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
+    for k in range(len(points)):
+        circ = rg.Circle(points[k], radius)
+        circ.fill_color = color
+        circ.attach_to(window)
+        window.render()
 
 
 # ----------------------------------------------------------------------
