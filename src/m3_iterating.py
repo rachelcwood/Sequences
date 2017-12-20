@@ -4,8 +4,8 @@ in its most classic form:
   -- Iterate all the way through the sequence, from beginning to end.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Rachel Wood.
+"""  # DONE 1
 
 import rosegraphics as rg
 
@@ -20,7 +20,7 @@ def main():
 def run_test_count_negatives():
     """ Tests the   count_negatives   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE 2
     #   It TESTS the  count_negatives  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -83,6 +83,20 @@ def run_test_count_negatives():
 
     # TO DO 2 (continued):  Add your 2 ADDITIONAL tests here:
 
+    # Test 5:
+    expected = 2
+    actual = count_negatives([-8, 13, 0, -5])
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 6:
+    expected = 5
+    actual = count_negatives([-1, -2, 3, -4, -5, -6])
+    print()
+    print('Test 6 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def count_negatives(seq):
     """
@@ -100,9 +114,16 @@ def count_negatives(seq):
       :type seq: (list | tuple) of (int | float)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE 3
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    count = 0
+    length = len(seq)
+
+    for k in range(length):
+        if seq[k] < 0:
+            count = count + 1
+    return count
 
 
 def run_test_count_short_ones():
